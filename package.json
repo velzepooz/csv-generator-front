@@ -9,10 +9,7 @@
     "lint:js": "eslint ./src",
     "lint:css": "stylelint ./src",
     "lint:html": "linthtml ./src",
-    "lint": "concurrently \"npm run lint:js\" \"npm run lint:css\" \"npm run lint:html\"",
-    "predeploy": "npm run build",
-    "deploy": "./deploy.sh",
-    "test": "jest ./src"
+    "lint": "concurrently \"npm run lint:js\" \"npm run lint:css\" \"npm run lint:html\""
   },
   "customDistStructure": {
     "config": {
@@ -54,12 +51,6 @@
     "parcel": "^1.12.4",
     "parcel-plugin-custom-dist-structure": "^1.1.19",
     "stylelint": "^13.6.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm test"
-    }
   },
   "dependencies": {
     "dotenv": "^10.0.0"

@@ -1,8 +1,4 @@
-# Template for FE projects
+# CSV Generator page
 
-* ESlint
-* Stylelint
-* Linthtml
-* SCSS
-* Tests
+Generate CSV with random fields
 

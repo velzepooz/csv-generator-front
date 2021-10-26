@@ -5,7 +5,7 @@
   "main": "./src/index.html",
   "scripts": {
     "start": "parcel ./src/index.html --open",
-    "build": "rm -rf ./dist && parcel build ./src/index.html --public-url ./",
+    "build": "rm -rf ./www && parcel build ./src/index.html --public-url ./ -d www --no-source-maps NODE_ENV=production",
     "lint:js": "eslint ./src",
     "lint:css": "stylelint ./src",
     "lint:html": "linthtml ./src",
@@ -13,6 +13,24 @@
     "predeploy": "npm run build",
     "deploy": "./deploy.sh",
     "test": "jest ./src"
+  },
+  "customDistStructure": {
+    "config": {
+      ".js": "js",
+      ".css": "css",
+      ".map": "maps",
+      "images": [
+        ".jpg",
+        ".svg",
+        ".png"
+      ],
+      "fonts": [
+        ".ttf",
+        ".eot",
+        ".woff",
+        ".otf"
+      ]
+    }
   },
   "keywords": [
     "boilerplate",
@@ -34,6 +52,7 @@
     "jest": "^26.0.1",
     "node-sass": "^4.14.1",
     "parcel": "^1.12.4",
+    "parcel-plugin-custom-dist-structure": "^1.1.19",
     "stylelint": "^13.6.1"
   },
   "husky": {
@@ -41,5 +60,8 @@
       "pre-commit": "npm run lint",
       "pre-push": "npm test"
     }
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0"
   }
 }

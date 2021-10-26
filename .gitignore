@@ -2,6 +2,7 @@
 node_modules
 .cache
 dist
+www
 
 # IDE
 .vscode
@@ -9,3 +10,7 @@ dist
 
 # Mac OS
 .DS_Store
+
+.env
+.env.development
+.env.production
